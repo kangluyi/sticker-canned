@@ -112,18 +112,38 @@ const features = [
         
         <div class="hero-features">
           <div class="hero-feature">
-            <span class="feature-number">1000+</span>
-            <span class="feature-label">精选表情</span>
+            <span class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4"></path>
+                <path d="m16.2 7.8 2.9-2.9"></path>
+                <path d="M18 12h4"></path>
+                <path d="m16.2 16.2 2.9 2.9"></path>
+                <path d="M12 18v4"></path>
+                <path d="m4.9 19.1 2.9-2.9"></path>
+                <path d="M2 12h4"></path>
+                <path d="m4.9 4.9 2.9 2.9"></path>
+              </svg>
+            </span>
+            <span class="feature-label">轻量高效</span>
           </div>
           <div class="hero-feature-divider"></div>
           <div class="hero-feature">
-            <span class="feature-number">5000+</span>
-            <span class="feature-label">活跃用户</span>
+            <span class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </svg>
+            </span>
+            <span class="feature-label">简单易用</span>
           </div>
           <div class="hero-feature-divider"></div>
           <div class="hero-feature">
-            <span class="feature-number">4.8</span>
-            <span class="feature-label">用户评分</span>
+            <span class="feature-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </span>
+            <span class="feature-label">安全可靠</span>
           </div>
         </div>
       </div>
@@ -520,20 +540,31 @@ html.dark .action-button.secondary:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
+}
+
+.hero-feature .feature-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--vp-c-brand-soft);
+  border-radius: 14px;
+  color: var(--vp-c-brand-1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-feature:hover .feature-icon-wrapper {
+  transform: scale(1.1);
+  background: var(--vp-c-brand-1);
+  color: var(--vp-c-bg);
 }
 
 .hero-feature-divider {
   width: 1px;
   height: 40px;
   background: var(--vp-c-divider);
-}
-
-.feature-number {
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--vp-c-brand-1);
-  letter-spacing: -1px;
 }
 
 .feature-label {
