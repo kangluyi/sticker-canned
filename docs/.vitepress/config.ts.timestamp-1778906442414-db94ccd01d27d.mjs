@@ -8,17 +8,17 @@ var config_default = defineConfig({
   themeConfig: {
     nav: [
       { text: "\u9996\u9875", link: "/" },
-      { text: "\u5FEB\u901F\u5F00\u59CB", link: "/guide/getting-started" },
-      { text: "\u4F7F\u7528\u6307\u5357", link: "/guide/usage" }
+      { text: "\u4F7F\u7528\u6307\u5357", link: "/guide" }
     ],
     sidebar: {
       "/guide/": [
         {
-          text: "\u6307\u5357",
+          text: "指南",
           items: [
-            { text: "\u5FEB\u901F\u5F00\u59CB", link: "/guide/getting-started" },
-            { text: "\u4F7F\u7528\u6307\u5357", link: "/guide/usage" },
-            { text: "\u5E38\u89C1\u95EE\u9898", link: "/guide/faq" }
+            { text: "开始", link: "/guide/"},
+            { text: "存储配置", link: "/guide/storage"},
+            { text: "imgBB", link: "/guide/storage/imgbb"},
+            { text: "图仓", link: "/guide/storage/tucang"},
           ]
         }
       ]
