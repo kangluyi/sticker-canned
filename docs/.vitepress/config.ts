@@ -28,13 +28,14 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
-          text: '指南',
+          text: "指南",
           items: [
-            { text: '快速开始', link: '/guide/getting-started' },
-            { text: '使用指南', link: '/guide/usage' },
-            { text: '常见问题', link: '/guide/faq' },
-          ],
-        },
+            { text: "开始", link: "/guide/"},
+            { text: "存储配置", link: "/guide/storage"},
+            { text: "imgBB", link: "/guide/storage/imgbb"},
+            { text: "图仓", link: "/guide/storage/tucang"},
+          ]
+        }
       ],
     },
 
