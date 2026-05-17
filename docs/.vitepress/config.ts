@@ -24,31 +24,23 @@ export default defineConfig({
       provider: 'local'
     },
 
+    outline: {
+      level: [2, 4],
+      label: 'On this page'
+    },
+
     sidebar: {
       '/guide/': [
         {
           text: '指南',
           items: [
-            { text: '开始使用', link: '/guide/'},
-            { text: '快速上手', link: '/guide/getting-started'},
-            { text: '基础使用', link: '/guide/usage'},
-            { text: '常见问题', link: '/guide/faq'},
+            { text: '开始', link: '/guide/'},
             {
               text: '存储配置',
               items: [
                 { text: '存储服务', link: '/guide/storage/' },
-                {
-                  text: 'imgBB',
-                  items: [
-                    { text: 'imgBB 配置', link: '/guide/storage/imgbb' }
-                  ]
-                },
-                {
-                  text: '图仓',
-                  items: [
-                    { text: '图仓 配置', link: '/guide/storage/tucang' }
-                  ]
-                }
+                { text: 'imgBB', link: '/guide/storage/imgbb' },
+                { text: '图仓', link: '/guide/storage/tucang' },
               ]
             }
           ]
