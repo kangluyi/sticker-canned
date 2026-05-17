@@ -9,8 +9,7 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: '首页', link: '/' },
-      { text: '快速开始', link: '/guide/getting-started' },
-      { text: '使用指南', link: '/guide/usage' },
+      { text: '使用指南', link: '/guide' },
     ],
     socialLinks: [
       { 
@@ -28,20 +27,38 @@ export default defineConfig({
     sidebar: {
       '/guide/': [
         {
-          text: "指南",
+          text: '指南',
           items: [
-            { text: "开始", link: "/guide/"},
-            { text: "存储配置", link: "/guide/storage"},
-            { text: "imgBB", link: "/guide/storage/imgbb"},
-            { text: "图仓", link: "/guide/storage/tucang"},
+            { text: '开始使用', link: '/guide/'},
+            { text: '快速上手', link: '/guide/getting-started'},
+            { text: '基础使用', link: '/guide/usage'},
+            { text: '常见问题', link: '/guide/faq'},
+            {
+              text: '存储配置',
+              items: [
+                { text: '存储服务', link: '/guide/storage/' },
+                {
+                  text: 'imgBB',
+                  items: [
+                    { text: 'imgBB 配置', link: '/guide/storage/imgbb' }
+                  ]
+                },
+                {
+                  text: '图仓',
+                  items: [
+                    { text: '图仓 配置', link: '/guide/storage/tucang' }
+                  ]
+                }
+              ]
+            }
           ]
         }
       ],
     },
 
     footer: {
-      message: '基于 VitePress 构建',
-      copyright: 'Copyright © 2024 表情罐头'
+      message: '<a href="https://beian.miit.gov.cn/">鲁ICP备2026008616号-2</a>',
+      copyright: 'Copyright © 2026 <a href="https://www.moruteaven.com/">抹露茶柒</a>'
     },
 
   }
