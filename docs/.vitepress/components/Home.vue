@@ -45,20 +45,36 @@ const features = [
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-      <line x1="9" y1="9" x2="9.01" y2="9"></line>
-      <line x1="15" y1="9" x2="15.01" y2="9"></line>
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
     </svg>`,
-    title: '简洁界面',
-    description: '黑白配色，简约美观的界面设计，带来愉悦的使用体验'
+    title: '本地/云端混合存储',
+    description: '本地与云端数据同步，灵活管理你的表情资源'
   },
   {
     icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+      <line x1="7" y1="7" x2="7.01" y2="7"></line>
     </svg>`,
-    title: '高效便捷',
-    description: '深度集成 uTools，随时呼出，即用即走'
+    title: '多标签搜索',
+    description: '支持多维度标签分类，快速筛选符合条件的表情'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      <circle cx="11" cy="11" r="1"></circle>
+      <circle cx="15" cy="15" r="1"></circle>
+    </svg>`,
+    title: '聚合搜索',
+    description: '多来源数据聚合，一站式搜索全网热门表情'
+  },
+  {
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+      <line x1="3" y1="9" x2="21" y2="9"></line>
+      <line x1="9" y1="21" x2="9" y2="9"></line>
+    </svg>`,
+    title: '多种图床支持',
+    description: '支持多种图床服务，灵活配置图片存储方案'
   }
 ]
 </script>
@@ -254,9 +270,14 @@ const features = [
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+.home,
+.home * {
+  box-sizing: border-box;
+}
+
 .hero {
   position: relative;
-  padding: 120px 24px 100px;
+  padding: clamp(72px, 10vw, 120px) clamp(16px, 4vw, 32px) clamp(64px, 9vw, 100px);
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -297,7 +318,7 @@ const features = [
   background-image: 
     linear-gradient(var(--vp-c-divider) 1px, transparent 1px),
     linear-gradient(90deg, var(--vp-c-divider) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-size: clamp(36px, 6vw, 60px) clamp(36px, 6vw, 60px);
   opacity: 0.1;
 }
 
@@ -340,7 +361,7 @@ const features = [
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: clamp(24px, 5vw, 40px);
 }
 
 .logo-wrapper {
@@ -362,10 +383,10 @@ const features = [
 }
 
 .logo {
-  width: 180px;
-  height: 180px;
+  width: clamp(112px, 16vw, 180px);
+  height: clamp(112px, 16vw, 180px);
   object-fit: contain;
-  border-radius: 40px;
+  border-radius: clamp(24px, 4vw, 40px);
   box-shadow: 0 25px 80px var(--vp-c-brand-soft);
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   position: relative;
@@ -386,15 +407,15 @@ html.dark .logo:hover {
 }
 
 .title {
-  margin: 0 0 20px;
+  margin: 0 0 clamp(14px, 2.5vw, 20px);
   line-height: 1.2;
 }
 
 .title-main {
   display: block;
-  font-size: 72px;
+  font-size: clamp(42px, 9vw, 72px);
   font-weight: 800;
-  letter-spacing: -3px;
+  letter-spacing: clamp(-3px, -0.35vw, -1px);
   background: linear-gradient(135deg, var(--vp-c-text-1) 0%, var(--vp-c-brand-1) 50%, var(--vp-c-text-2) 100%);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -410,16 +431,16 @@ html.dark .logo:hover {
 
 .title-sub {
   display: block;
-  font-size: 22px;
+  font-size: clamp(14px, 2.4vw, 22px);
   font-weight: 400;
   color: var(--vp-c-text-3);
-  letter-spacing: 6px;
-  margin-top: 12px;
+  letter-spacing: clamp(3px, 0.7vw, 6px);
+  margin-top: clamp(8px, 1.8vw, 12px);
   text-transform: uppercase;
 }
 
 .tagline {
-  font-size: 28px;
+  font-size: clamp(20px, 4vw, 28px);
   font-weight: 600;
   color: var(--vp-c-text-1);
   margin: 0 0 16px;
@@ -427,9 +448,9 @@ html.dark .logo:hover {
 }
 
 .description {
-  font-size: 20px;
+  font-size: clamp(16px, 2.4vw, 20px);
   color: var(--vp-c-text-2);
-  margin: 0 0 48px;
+  margin: 0 0 clamp(32px, 6vw, 48px);
   line-height: 1.7;
   max-width: 600px;
   margin-left: auto;
@@ -438,21 +459,24 @@ html.dark .logo:hover {
 
 .actions {
   display: flex;
-  gap: 20px;
+  gap: clamp(12px, 2.6vw, 20px);
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 60px;
+  margin-bottom: clamp(40px, 7vw, 60px);
 }
 
 .action-button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 16px 36px;
+  justify-content: center;
+  min-height: 52px;
+  padding: clamp(13px, 2vw, 16px) clamp(24px, 4vw, 36px);
   border-radius: 14px;
-  font-size: 17px;
+  font-size: clamp(15px, 2vw, 17px);
   font-weight: 600;
   text-decoration: none;
+  white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   border: 2px solid transparent;
   position: relative;
@@ -523,32 +547,36 @@ html.dark .action-button.secondary:hover {
 }
 
 .hero-features {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
   align-items: center;
-  gap: 40px;
-  padding: 32px;
+  gap: clamp(16px, 4vw, 40px);
+  width: 100%;
+  max-width: 640px;
+  padding: clamp(20px, 4vw, 32px);
   background: var(--vp-c-bg-soft);
   border-radius: 20px;
   border: 1px solid var(--vp-c-divider);
-  max-width: 600px;
   margin: 0 auto;
   backdrop-filter: blur(10px);
+  box-sizing: border-box;
 }
 
 .hero-feature {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: clamp(8px, 1.6vw, 10px);
+  min-width: 0;
 }
 
 .hero-feature .feature-icon-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: clamp(48px, 6vw, 56px);
+  height: clamp(48px, 6vw, 56px);
+  margin-bottom: 0;
   background: var(--vp-c-brand-soft);
   border-radius: 14px;
   color: var(--vp-c-brand-1);
@@ -568,11 +596,12 @@ html.dark .action-button.secondary:hover {
 }
 
 .feature-label {
-  font-size: 13px;
+  font-size: clamp(12px, 1.6vw, 13px);
   color: var(--vp-c-text-2);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: clamp(0.5px, 0.16vw, 1px);
+  white-space: nowrap;
 }
 
 .hero-decoration {
@@ -588,8 +617,8 @@ html.dark .action-button.secondary:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 800px;
+  width: min(70vw, 800px);
+  height: min(70vw, 800px);
   opacity: 0.1;
 }
 
@@ -622,8 +651,8 @@ html.dark .action-button.secondary:hover {
   position: absolute;
   top: 10%;
   right: 5%;
-  width: 300px;
-  height: 300px;
+  width: clamp(180px, 25vw, 300px);
+  height: clamp(180px, 25vw, 300px);
   border: 1px solid var(--vp-c-divider);
   border-radius: 50%;
   opacity: 0.2;
@@ -665,7 +694,7 @@ html.dark .action-button.secondary:hover {
 .features {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 24px 120px;
+  padding: clamp(60px, 9vw, 100px) clamp(16px, 4vw, 24px) clamp(72px, 10vw, 120px);
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -678,11 +707,11 @@ html.dark .action-button.secondary:hover {
 
 .section-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: clamp(36px, 6vw, 60px);
 }
 
 .section-title {
-  font-size: 48px;
+  font-size: clamp(32px, 6vw, 48px);
   font-weight: 800;
   color: var(--vp-c-text-1);
   margin: 0 0 16px;
@@ -690,25 +719,26 @@ html.dark .action-button.secondary:hover {
 }
 
 .section-description {
-  font-size: 18px;
+  font-size: clamp(16px, 2.4vw, 18px);
   color: var(--vp-c-text-2);
   margin: 0;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.7;
 }
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: clamp(18px, 3vw, 32px);
 }
 
 .feature-card {
   background: var(--vp-c-bg);
   border: 1px solid var(--vp-c-divider);
   border-radius: 20px;
-  padding: 40px 32px;
+  padding: clamp(28px, 4vw, 40px) clamp(20px, 3vw, 32px);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -838,22 +868,22 @@ html.dark .feature-card:hover {
   background: var(--vp-c-bg-soft);
   border-top: 1px solid var(--vp-c-divider);
   border-bottom: 1px solid var(--vp-c-divider);
-  padding: 80px 24px;
+  padding: clamp(48px, 8vw, 80px) clamp(16px, 4vw, 24px);
 }
 
 .stats-container {
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: clamp(18px, 4vw, 40px);
 }
 
 .stat-item {
   display: flex;
   align-items: center;
-  gap: 20px;
-  padding: 24px;
+  gap: clamp(14px, 2.6vw, 20px);
+  padding: clamp(18px, 3vw, 24px);
   background: var(--vp-c-bg);
   border-radius: 16px;
   border: 1px solid var(--vp-c-divider);
@@ -890,6 +920,7 @@ html.dark .stat-item:hover {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  min-width: 0;
 }
 
 .stat-number {
@@ -906,7 +937,7 @@ html.dark .stat-item:hover {
 .footer-section {
   background: var(--vp-c-text-1);
   color: var(--vp-c-bg);
-  padding: 64px 24px;
+  padding: clamp(40px, 7vw, 64px) clamp(16px, 4vw, 24px);
   text-align: center;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -917,18 +948,20 @@ html.dark .stat-item:hover {
 }
 
 .footer-text {
-  font-size: 20px;
+  font-size: clamp(16px, 2.6vw, 20px);
   margin: 0 0 28px;
   color: var(--vp-c-bg-soft);
+  line-height: 1.8;
 }
 
 .footer-text code {
   background: var(--vp-c-bg);
   color: var(--vp-c-text-1);
-  padding: 6px 16px;
+  display: inline-block;
+  padding: 6px clamp(10px, 2vw, 16px);
   border-radius: 8px;
   font-family: 'SF Mono', Monaco, 'Courier New', monospace;
-  font-size: 18px;
+  font-size: clamp(14px, 2.2vw, 18px);
   font-weight: 600;
 }
 
@@ -958,24 +991,26 @@ html.dark .stat-item:hover {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 20px 80px;
+    padding: 72px 20px 72px;
   }
 
   .logo {
-    width: 140px;
-    height: 140px;
+    width: clamp(112px, 28vw, 140px);
+    height: clamp(112px, 28vw, 140px);
   }
 
   .title-main {
-    font-size: 48px;
+    font-size: clamp(40px, 10vw, 48px);
+    letter-spacing: -1.5px;
   }
 
   .title-sub {
-    font-size: 16px;
+    font-size: clamp(13px, 4vw, 16px);
+    letter-spacing: 4px;
   }
 
   .tagline {
-    font-size: 22px;
+    font-size: clamp(19px, 5vw, 22px);
   }
 
   .description {
@@ -985,19 +1020,20 @@ html.dark .stat-item:hover {
   .actions {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
     margin-bottom: 40px;
   }
 
   .action-button {
     width: 100%;
-    max-width: 300px;
-    justify-content: center;
+    max-width: 320px;
   }
 
   .hero-features {
-    padding: 24px;
-    gap: 24px;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 420px;
+    padding: 20px;
+    gap: 14px;
   }
 
   .hero-feature-divider {
@@ -1009,11 +1045,11 @@ html.dark .stat-item:hover {
   }
 
   .features {
-    padding: 60px 20px 80px;
+    padding: 56px 20px 72px;
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .section-description {
@@ -1025,7 +1061,7 @@ html.dark .stat-item:hover {
   }
 
   .stats-section {
-    padding: 60px 20px;
+    padding: 56px 20px;
   }
 
   .stat-item {
@@ -1049,6 +1085,142 @@ html.dark .stat-item:hover {
   .decoration-grid,
   .decoration-dots {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 64px 16px 56px;
+  }
+
+  .logo-container {
+    margin-bottom: 22px;
+  }
+
+  .logo {
+    width: 104px;
+    height: 104px;
+    border-radius: 24px;
+  }
+
+  .title-main {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+
+  .title-sub {
+    margin-top: 8px;
+    letter-spacing: 3px;
+  }
+
+  .tagline {
+    font-size: 19px;
+  }
+
+  .description {
+    margin-bottom: 30px;
+    line-height: 1.65;
+  }
+
+  .actions {
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .action-button {
+    max-width: none;
+    min-height: 48px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    font-size: 15px;
+  }
+
+  .hero-features {
+    max-width: 360px;
+    padding: 16px 10px;
+    gap: 8px;
+    border-radius: 16px;
+  }
+
+  .hero-feature .feature-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .hero-feature .feature-icon-wrapper svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .feature-label {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .features {
+    padding: 48px 16px 64px;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .feature-grid {
+    gap: 16px;
+  }
+
+  .feature-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+
+  .stats-section {
+    padding: 48px 16px;
+  }
+
+  .stat-item {
+    padding: 18px;
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .stat-number {
+    font-size: 18px;
+  }
+
+  .footer-section {
+    padding: 40px 16px;
+  }
+
+  .footer-text {
+    margin-bottom: 22px;
+  }
+
+  .footer-text code {
+    margin: 2px;
+    padding: 4px 10px;
+  }
+
+  .footer-links {
+    gap: 12px;
+  }
+}
+
+@media (hover: none) {
+  .logo:hover,
+  .action-button.primary:hover,
+  .action-button.secondary:hover,
+  .feature-card:hover,
+  .stat-item:hover {
+    transform: none;
   }
 }
 </style>

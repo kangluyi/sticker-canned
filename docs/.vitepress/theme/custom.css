@@ -65,3 +65,57 @@
 .VPButton.brand:hover {
   background: var(--vp-c-brand-2);
 }
+
+.vp-doc img,
+.vp-doc video {
+  max-width: 100%;
+  height: auto;
+}
+
+.vp-doc table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.vp-doc a,
+.vp-doc :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .vp-doc h1 {
+    font-size: 30px;
+    line-height: 1.25;
+  }
+
+  .vp-doc h2 {
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  .vp-doc h3 {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .vp-doc p,
+  .vp-doc li {
+    line-height: 1.8;
+  }
+
+  .vp-doc div[class*='language-'] {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .VPNavBarTitle .title {
+    max-width: 52vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
