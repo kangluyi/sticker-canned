@@ -268,6 +268,8 @@ const features = [
   color: var(--vp-c-text-1);
   overflow-x: hidden;
   transition: background 0.3s ease, color 0.3s ease;
+  width: 100%;
+  max-width: none;
 }
 
 .home,
@@ -355,6 +357,7 @@ const features = [
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .logo-container {
@@ -552,7 +555,7 @@ html.dark .action-button.secondary:hover {
   align-items: center;
   gap: clamp(16px, 4vw, 40px);
   width: 100%;
-  max-width: 640px;
+  max-width: 800px;
   padding: clamp(20px, 4vw, 32px);
   background: var(--vp-c-bg-soft);
   border-radius: 20px;
@@ -692,9 +695,9 @@ html.dark .action-button.secondary:hover {
 }
 
 .features {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: clamp(60px, 9vw, 100px) clamp(16px, 4vw, 24px) clamp(72px, 10vw, 120px);
+  width: 100%;
+  margin: 0;
+  padding: clamp(60px, 9vw, 100px) clamp(20px, 8vw, 120px) clamp(72px, 10vw, 120px);
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -872,10 +875,11 @@ html.dark .feature-card:hover {
 }
 
 .stats-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: clamp(18px, 4vw, 40px);
 }
 
@@ -943,8 +947,9 @@ html.dark .stat-item:hover {
 }
 
 .footer-content {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .footer-text {
