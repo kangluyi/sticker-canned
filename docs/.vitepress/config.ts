@@ -1,4 +1,7 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type DefaultTheme } from 'vitepress'
+import type { GreenCandyThemeConfig } from 'greencandy'
+
+type ThemeConfig = DefaultTheme.Config & GreenCandyThemeConfig
 
 export default defineConfig({
   title: '表情罐头',
@@ -53,5 +56,23 @@ export default defineConfig({
       copyright: 'Copyright © 2026 <a href="https://www.moruteaven.com/">抹露茶柒</a>'
     },
 
-  }
+    colors: {
+      primary: '#16a34a',
+      primaryDark: '#15803d'
+    },
+    radius: 0.75,
+    shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    busuanzi: {
+      enable: true,
+      rootDomain: 'busuanzi.ibruce.info',
+      sitePv: true,
+      siteUv: true,
+      pagePv: true
+    },
+    externalRedirect: {
+      enable: true,
+      countdown: 5,
+      skipDomains: []
+    },
+  } as ThemeConfig
 })

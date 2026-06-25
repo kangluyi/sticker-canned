@@ -2,6 +2,13 @@
 
 ## 近期更新
 
+### 2026-06-25
+- 切换到绿沈之饴（greencandy）主题
+- 安装 greencandy 主题包
+- 更新主题入口文件以使用 greencandy 主题
+- 在 config.ts 中添加主题配置（主题色、圆角、阴影、不蒜子统计、外部链接跳转）
+- 删除 custom.css 文件，避免与 greencandy 主题样式冲突
+
 ### 2026-06-13
 - 优化了首页设计
 - 使用 Noto Sans SC 字体提升中文显示效果
@@ -46,6 +53,7 @@
 - VitePress 1.3.4
 - Vue 3
 - TypeScript
+- 绿沈之饴（greencandy）主题
 
 ## 项目结构
 ```
