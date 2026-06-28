@@ -8,6 +8,7 @@ export default defineConfig({
   description: '一个 uTools 表情包管理插件',
   lang: 'zh-CN',
   base: '/',
+  appearance: 'dark',
   themeConfig: {
     logo: '/logo.png',
     nav: [
@@ -22,10 +23,6 @@ export default defineConfig({
         link: 'https://www.u-tools.cn/plugins/detail/%E8%A1%A8%E6%83%85%E7%BD%90%E5%A4%B4/'
       }
     ],
-
-    search: {
-      provider: 'local'
-    },
 
     outline: {
       level: [2, 4],
@@ -57,11 +54,11 @@ export default defineConfig({
     },
 
     colors: {
-      primary: '#16a34a',
-      primaryDark: '#15803d'
+      primary: '#ffffff',
+      primaryDark: '#e0e0e0'
     },
-    radius: 0.75,
-    shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+    radius: 0.5,
+    shadow: '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2)',
     busuanzi: {
       enable: true,
       rootDomain: 'busuanzi.ibruce.info',
@@ -73,6 +70,49 @@ export default defineConfig({
       enable: true,
       countdown: 5,
       skipDomains: []
+    },
+    search: {
+      provider: 'local',
+      options: {
+        detailedView: true
+      }
+    },
+    download: {
+      title: '客户端下载',
+      clients: [
+        {
+          type: 'uTools 插件',
+          icon: 'UT',
+          variants: [
+            {
+              name: 'uTools 插件包',
+              system: 'uTools 6.0+',
+              links: [{ text: '下载 upx', link: '/downloads/app-utools.upx', type: 'primary' }]
+            }
+          ]
+        }
+      ]
+    },
+    changelog: {
+      title: '更新日志',
+      description: '表情罐头各客户端的更新记录。',
+      clients: [
+        {
+          type: 'uTools 插件',
+          icon: 'UT',
+          badge: '插件',
+          latestVersion: '1.0.0',
+          lastUpdated: '2026-06-25',
+          entries: [
+            {
+              version: '1.0.0',
+              date: '2026-06-25',
+              title: '首个公开版本',
+              changes: ['提供 uTools 插件版本。']
+            }
+          ]
+        }
+      ]
     },
   } as ThemeConfig
 })

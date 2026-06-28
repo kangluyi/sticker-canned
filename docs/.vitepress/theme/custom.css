@@ -1,0 +1,14 @@
+:root.dark {
+  --vp-c-brand: #ffffff;
+  --vp-c-brand-dark: #e0e0e0;
+  --vp-c-brand-1: #ffffff;
+  --vp-c-brand-2: #e0e0e0;
+  --vp-c-brand-3: #ffffff;
+  --vp-c-brand-soft: rgba(255, 255, 255, 0.14);
+  --vp-button-brand-bg: #ffffff;
+  --vp-button-brand-hover-bg: #e0e0e0;
+  --vp-button-brand-active-bg: #e0e0e0;
+  --vp-button-brand-text: #000000;
+  --vp-button-brand-hover-text: #000000;
+  --vp-button-brand-active-text: #000000;
+}
